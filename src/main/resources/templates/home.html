@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Hello World!</title>
+
+    <!--jQuery-->
+    <script src="js/jquery.min.js"></script>
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+    <!--Custom JS-->
+    <script src="js/login.js"></script>
+    <script src="js/home.js"></script>
+
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="css/login.css"/>
+
+</head>
+<body class="contact-form">
+
+<div class="container">
+
+    <!--Header-->
+    <div class="page-header">
+        <div class="row">
+            <div class="col-xs-8 col-md-4">
+                <div class="form-group">
+                    <input type="button" id="add-contact-button" class="form-control btn btn-register"
+                           value="Добавить контакт"/>
+                </div>
+            </div>
+            <div class="col-xs-4 col-md-2 pull-right">
+                <div class="form-group">
+                    <input id="logout" type="button" class="form-control btn btn-register btn-cancel" value="Logout"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Add|Edit form-->
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3" id="contact-form-container">
+            <div class="panel panel-login">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <form id="contact-form" action="/contacts" method="post" role="form">
+                                <!--ID-->
+                                <input type="hidden" name="id" value=""/>
+
+                                <!--Name-->
+                                <div class="form-group">
+                                    <div name="firstName" class="errors"></div>
+                                    <input type="text" name="firstName" tabindex="1" class="form-control"
+                                           placeholder="Имя" value=""/>
+                                </div>
+                                <div class="form-group">
+                                    <div name="middleName" class="errors"></div>
+                                    <input type="text" name="middleName" tabindex="2" class="form-control"
+                                           placeholder="Отчество" value=""/>
+                                </div>
+                                <div class="form-group">
+                                    <div name="lastName" class="errors"></div>
+                                    <input type="text" name="lastName" tabindex="3"
+                                           class="form-control" placeholder="Фамилия"/>
+                                </div>
+                                <!--/Name-->
+
+                                <!--Numbers-->
+                                <div class="form-group">
+                                    <div name="mobilePhoneNumber" class="errors"></div>
+                                    <input type="text" name="mobilePhoneNumber" tabindex="4"
+                                           class="form-control" placeholder="Номер телефона (моб)"/>
+                                </div>
+                                <div class="form-group">
+                                    <div name="homePhoneNumber" class="errors"></div>
+                                    <input type="text" name="homePhoneNumber" tabindex="5"
+                                           class="form-control" placeholder="Номер телефона (дом)"/>
+                                </div>
+                                <!--/Numbers-->
+
+                                <!--Address-->
+                                <div class="form-group">
+                                    <div name="address" class="errors"></div>
+                                    <input type="text" name="address" tabindex="4"
+                                           class="form-control" placeholder="Адрес"/>
+                                </div>
+                                <div class="form-group">
+                                    <div name="email" class="errors"></div>
+                                    <input type="text" name="email" tabindex="5"
+                                           class="form-control" placeholder="e-mail"/>
+                                </div>
+                                <!--/Address-->
+
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-xs-6">
+                                                <input type="button" name="add-cancel" id="add-cancel"
+                                                       tabindex="4" class="form-control btn btn-register btn-cancel"
+                                                       value="Отмена"/>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <input type="submit" name="add-submit" id="add-submit"
+                                                       tabindex="5" class="form-control btn btn-register"
+                                                       value="Сохранить"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Tools-->
+    <div class="row group">
+        <div class="col-12">
+            <div class="form-group"><input id="search" type="text" class="form-control" placeholder="Поиск"/>
+            </div>
+        </div>
+    </div>
+
+    <!--Table-->
+    <div class="row table-responsive group">
+        <table id="contact-table" class="table table-hover">
+            <thead>
+            <tr>
+                <th>Фамилия</th>
+                <th>Имя</th>
+                <th>Отчество</th>
+                <th>Номер тел. (моб)</th>
+                <th>Номер тел. (дом)</th>
+                <th>E-mail</th>
+                <th>Адрес</th>
+                <th>Ред.</th>
+                <th>Удалить</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>
