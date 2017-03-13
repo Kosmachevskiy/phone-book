@@ -85,4 +85,5 @@ JDBC-драйвера.
 При первом запуске создается demo-пользователь с _логином_ "**demo**" и _паролем_ "**demo**".
 Для данного пользователя генерируются demo-контакты.
 
-![screenshot](https://goo.gl/lUQxjA)
+
+![screenshot](https://goo.gl/vArVrG)
